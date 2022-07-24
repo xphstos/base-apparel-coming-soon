@@ -5,5 +5,5 @@ This is a solution to the [Base Apparel coming soon page challenge on Frontend M
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [base-apparel-coming-soon](https://github.com/xphstos/base-apparel-coming-soon)
+- Live Site URL: [f5107970780d88581fb19590e26b31b81ec0d1bb.surge.sh](https://f5107970780d88581fb19590e26b31b81ec0d1bb.surge.sh/)
