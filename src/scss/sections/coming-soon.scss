@@ -6,7 +6,7 @@
   grid-template-columns: 60% 40%;
   grid-template-areas: "logo image" "header image";
   grid-template-rows: min-content auto;
-  background: url("../images/bg-pattern-desktop.svg") no-repeat left top / 60%
+  background: url("../images/bg-pattern-desktop.svg") no-repeat left top / auto
     100%;
 
   @media screen and (max-width: 768px) {
