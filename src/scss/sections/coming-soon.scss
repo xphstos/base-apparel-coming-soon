@@ -42,7 +42,7 @@
     align-content: center;
     padding-left: max(2rem, 50vw - var(--container) / 2);
     box-sizing: content-box;
-    width: min(31rem, 100% - 4rem);
+    width: min(28rem, 100% - 4rem);
 
     @media screen and (max-width: 768px) {
       display: block;
