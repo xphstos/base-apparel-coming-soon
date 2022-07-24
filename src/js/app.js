@@ -41,6 +41,12 @@ emailInput.addEventListener("blur", ({ target: { value } }) => {
     .then((valid) => {
       submitButton.disabled = !valid;
       form.classList.toggle("has-errors", !valid);
+
+      if (value === "") {
+        setTimeout(() => {
+          form.classList.toggle("has-errors", valid);
+        }, 2000);
+      }
     });
 });
 
