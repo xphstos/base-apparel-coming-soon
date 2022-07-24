@@ -29,8 +29,20 @@ emailInput.addEventListener(
         submitButton.disabled = !valid;
         form.classList.toggle("has-errors", !valid);
       });
-  }, 300)
+  }, 400)
 );
+
+// Validate the email input when it loses focus
+emailInput.addEventListener("blur", ({ target: { value } }) => {
+  formSchema
+    .isValid({
+      email: value,
+    })
+    .then((valid) => {
+      submitButton.disabled = !valid;
+      form.classList.toggle("has-errors", !valid);
+    });
+});
 
 // Validate the form data after submition
 form.addEventListener("submit", (e) => {
