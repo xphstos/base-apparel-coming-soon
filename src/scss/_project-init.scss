@@ -1,0 +1,41 @@
+@use "./functions" as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font: 400 fluid-rem(0.875rem, 1rem) / 1.618 "Josefin Sans", sans-serif;
+  color: v("accent-500");
+
+  &.no-scroll {
+    overflow-y: hidden;
+  }
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-weight: 600;
+    line-height: 1.1;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+svg,
+img {
+  vertical-align: middle;
+}
+
+main {
+  min-height: 100%;
+}

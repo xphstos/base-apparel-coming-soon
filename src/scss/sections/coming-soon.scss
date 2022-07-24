@@ -1,0 +1,67 @@
+@use "../functions" as *;
+
+.coming-soon {
+  --container: 1024px;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  grid-template-areas: "logo image" "header image";
+  grid-template-rows: min-content auto;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+
+  &__graphic {
+    grid-area: image;
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+  }
+
+  &__homelink {
+    padding-left: max(2rem, 50vw - var(--container) / 2);
+    grid-area: logo;
+    padding-top: fluid-rem(2rem, 4rem, 768 1024);
+
+    @media screen and (max-width: 768px) {
+      padding-block: 2rem;
+    }
+  }
+
+  &__header {
+    grid-area: header;
+    display: grid;
+    align-content: center;
+    padding-left: max(2rem, 50vw - var(--container) / 2);
+    padding-block: 4rem;
+    width: min(28rem, 100% - 4rem);
+
+    @media screen and (max-width: 768px) {
+      display: block;
+      text-align: center;
+      padding-inline: unset;
+      margin-inline: auto;
+    }
+  }
+
+  &__title {
+    color: v("off-black");
+    letter-spacing: 0.27em;
+    text-transform: uppercase;
+    font-size: fluid-rem(2.5rem, 4rem);
+
+    span {
+      display: block;
+      color: v("accent-500");
+      font-weight: 300;
+    }
+  }
+
+  &__greeting {
+    margin-block: fluid-rem(2rem, 2.5rem) fluid-rem(2.5rem, 3rem);
+  }
+}

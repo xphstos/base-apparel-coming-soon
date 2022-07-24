@@ -1,0 +1,113 @@
+@use "sass:color" as *;
+@use "../functions" as *;
+@use "../mixins" as *;
+@use "../helpers" as *;
+
+.form {
+  display: grid;
+  align-items: start;
+
+  &__label {
+    grid-area: 1 / 1;
+    display: grid;
+
+    &-text {
+      @extend %sr-only;
+    }
+  }
+
+  &__input {
+    grid-area: 1 / 1;
+    width: 100%;
+    border-radius: 3.5rem;
+    color: v("off-black");
+    border: 2px solid adjust(c("accent-500"), $alpha: -0.5);
+    min-height: 3.5rem;
+    padding: 0 fluid-rem(3rem, 6rem) 0 2rem;
+    transition: border-color 0.2s ease, color 0.2s ease;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:-webkit-autofill,
+    &:-internal-autofill-selected {
+      border: 2px solid adjust(c("accent-500"), $alpha: -0.5);
+      -webkit-text-fill-color: v("off-black");
+    }
+
+    &::placeholder {
+      color: inherit;
+    }
+
+    &-error {
+      @include size(1.25rem);
+      grid-area: 1 / 1;
+      align-self: center;
+      justify-self: end;
+      transform: translateX(calc(-1 * #{fluid-rem(4rem, 7rem)}));
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+  }
+
+  &__errors {
+    text-align: left;
+    color: v("error");
+    font-size: 0.875rem;
+    padding: 0.5rem 2rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  &__submit {
+    grid-area: 1 / 1;
+    justify-self: end;
+  }
+
+  &__message {
+    grid-area: 1 / 1;
+    opacity: 0;
+    display: none;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    color: v("accent-400");
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 1.333;
+  }
+}
+
+@at-root {
+  .form {
+    &.has-errors {
+      .form__input {
+        color: v("error");
+        border-color: currentColor;
+
+        &:-webkit-autofill,
+        &:-internal-autofill-selected {
+          border: 2px solid v("error");
+          -webkit-text-fill-color: v("error");
+        }
+      }
+      .form__input-error,
+      .form__errors {
+        opacity: 1;
+      }
+    }
+    &.success {
+      .form__errors,
+      .form__label,
+      .form__submit {
+        display: none;
+      }
+      .form__message {
+        opacity: 1;
+        display: block;
+        pointer-events: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@use "../functions" as *;
+
+.homelink {
+  display: block;
+
+  &__icon {
+    width: fluid-rem(6.5rem, 9.5rem);
+  }
+}

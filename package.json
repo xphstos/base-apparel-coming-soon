@@ -1,0 +1,26 @@
+{
+  "name": "base-apparel-coming-soon",
+  "version": "1.0.0",
+  "description": "...",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "prestart": "rimraf .parcel-cache dist/",
+    "start": "parcel --no-cache src/index.html",
+    "serve": "http-server -p 1337 dist -c-1",
+    "prebuild": "rimraf .parcel-cache dist/",
+    "build": "parcel build src/index.html"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.5.0",
+    "http-server": "^14.1.0",
+    "parcel": "^2.5.0",
+    "posthtml-include": "^1.7.4",
+    "posthtml-inline-svg": "^0.2.0",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "yup": "^0.32.11"
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300..600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./scss/style.scss" />
+  </head>
+  <body>
+    <main class="coming-soon">
+      <a href="/" title="base apparel" class="coming-soon__homelink homelink">
+        <icon src="images/logo.svg" class="homelink__icon"></icon>
+      </a>
+      <picture class="coming-soon__graphic">
+        <source media="(max-width: 768px)" srcset="./images/hero-mobile.jpg" />
+        <source media="(min-width: 769px)" srcset="./images/hero-desktop.jpg" />
+        <img
+          src="./images/hero-desktop.jpg"
+          alt=""
+          role="presentation"
+          class="coming-soon__graphic-image"
+        />
+      </picture>
+      <!-- <div class="coming-soon__graphic">
+        <img
+          src="./images/hero-desktop.jpg"
+          alt=""
+          role="presentation"
+          class="coming-soon__graphic-image"
+        />
+      </div> -->
+      <div class="coming-soon__header">
+        <h1 class="coming-soon__title">
+          <span>We're</span>
+          coming soon
+        </h1>
+        <p class="coming-soon__greeting">
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+        <form class="coming-soon__form form">
+          <label class="form__label">
+            <span class="form__label-text">Email address</span>
+            <input
+              class="form__input"
+              type="text"
+              placeholder="Email Address"
+              name="email"
+            />
+            <icon src="images/icon-error.svg" class="form__input-error"></icon>
+          </label>
+          <button type="submit" class="btn form__submit" title="register">
+            <icon src="images/icon-arrow.svg" class="btn__icon"></icon>
+          </button>
+          <p class="form__errors">Lorem ipsum dolor sit amet.</p>
+          <p class="form__message">
+            Thank you!<br />
+            You'll be hearing from us soon!
+          </p>
+        </form>
+      </div>
+    </main>
+    <script src="./js/app.js" type="module"></script>
+  </body>
+</html>
