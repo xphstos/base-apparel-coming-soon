@@ -5,12 +5,14 @@
   display: grid;
   grid-template-columns: 60% 40%;
   grid-template-areas: "logo image" "header image";
-  grid-template-rows: min-content auto;
-  background: url("../images/bg-pattern-desktop.svg") no-repeat left top / auto
+  grid-template-rows: 100px auto;
+  background: url("../images/bg-pattern-desktop.svg") no-repeat left top / 60%
     100%;
 
   @media screen and (max-width: 768px) {
     display: block;
+    background: url("../images/bg-pattern-desktop.svg") no-repeat left top /
+      cover;
   }
 
   &__graphic {
@@ -40,7 +42,7 @@
     align-content: center;
     padding-left: max(2rem, 50vw - var(--container) / 2);
     padding-block: 4rem;
-    width: min(28rem, 100% - 4rem);
+    width: min(31rem, 100% - 4rem);
 
     @media screen and (max-width: 768px) {
       display: block;
