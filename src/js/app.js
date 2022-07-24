@@ -8,7 +8,7 @@ const formSchema = object({
   email: string().email().required(),
 });
 
-// Initial validation of the formm
+// Initial validation of the form
 formSchema
   .isValid({
     email: emailInput.value,
@@ -43,7 +43,6 @@ form.addEventListener("submit", (e) => {
       email: formData.get("email"),
     })
     .then((valid) => {
-      console.log({ valid, data: formData.get("email") });
       form.classList.toggle("success", valid);
     });
 });
